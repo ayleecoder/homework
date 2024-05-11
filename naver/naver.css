@@ -1,0 +1,182 @@
+/* 기본 스타일 지정  */
+body {
+  color: #181818;
+  margin: 0 auto;
+  min-width: 320px;
+  /* 320px 이상 768px 미만 */
+  @media (min-width: 320px) and (max-width: 768px) {
+  }
+
+  :focus-visible {
+    outline: 2px solid #24388d;
+  }
+
+  body *,
+  body *::before,
+  body *::after {
+    box-sizing: border-box;
+  }
+
+  fieldset,
+  button,
+  ul {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* logo 컴포넌트 */
+  .logo {
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  /* input 컴포넌트 */
+  .form-input {
+    background-color: #fff;
+    border: 1px solid #dadada;
+    width: 100%;
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+
+    label {
+      white-space: nowrap;
+    }
+
+    input {
+      flex-grow: 1;
+      border: 0;
+      font-size: 0.875rem;
+      padding: 1px 1px 1px 0px;
+      height: 24px;
+
+      block-size: 2.5rem;
+      width: 100%;
+    }
+
+    input:focus {
+      outline: none;
+      background-color: transparent;
+    }
+
+    &:focus-within {
+      outline: 1px solid #03cf5d;
+      background-color: #e9f0fd;
+    }
+  }
+
+  /* button 컴포넌트 */
+
+  .login-button {
+    background-color: #03cf5d;
+    border-radius: 1px;
+    color: #fff;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1rem;
+    height: 2.8125rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* login */
+  .login-form {
+    /* background-color: yellow; */
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  /* login form */
+
+  .form-checkbox {
+    position: relative;
+    width: inherit;
+    padding: 0 20px;
+    list-style: none;
+
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row nowrap;
+    justify-content: right;
+
+    .save-login-status input {
+      position: absolute;
+      appearance: none;
+      width: 0.85rem;
+      height: 0.85rem;
+    }
+
+    .save-login-status label {
+      background: url(./icons/unchecked.svg) no-repeat 0 0 / contain;
+      padding-left: 25px;
+    }
+
+    input:checked + label[for='saveLoginStatus'] {
+      background-image: url(./icons/checked.svg);
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    input:focus-visible {
+      outline: 2px solid #24388d;
+    }
+  }
+
+  .ip-security-option {
+    display: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 반응형 */
+/* 768px 이상 디바이스 */
+@media (min-width: 768px) {
+  body {
+    max-width: 500px;
+
+    .form-checkbox {
+      justify-content: space-between;
+    }
+
+    .ip-security-option {
+      display: block;
+
+      input {
+        position: absolute;
+        appearance: none;
+        width: 1.5rem;
+        height: 0.85rem;
+      }
+
+      #on {
+        display: none;
+      }
+
+      #ipSecurity:checked ~ #off {
+        display: none;
+      }
+      #ipSecurity:checked ~ #on {
+        display: inline;
+        color: #03cf5d;
+      }
+    }
+  }
+}

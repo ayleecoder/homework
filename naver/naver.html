@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>네이버 로그인 영역</title>
+    <link rel="stylesheet" href="./naver.css" />
   </head>
   <body>
     <h1 class="logo">
@@ -18,12 +19,24 @@
           <!--  아이디 입력  -->
           <div class="login-input-group">
             <div role="group" class="form-input">
-              <label for="userId">아이디(이메일)</label>
-              <input type="text" name="userId" id="userId" required />
+              <label for="userId"></label>
+              <input
+                type="text"
+                name="userId"
+                id="userId"
+                required
+                placeholder="아이디(이메일)"
+              />
             </div>
             <div role="group" class="form-input">
-              <label for="userPwd">비밀번호</label>
-              <input type="password" name="userPwd" id="userPwd" required/>
+              <label for="userPwd"></label>
+              <input
+                type="password"
+                name="userPwd"
+                id="userPwd"
+                required
+                placeholder="비밀번호"
+              />
             </div>
           </div>
 
@@ -31,22 +44,18 @@
         </fieldset>
       </form>
 
-      <ul class="login-status">
-        <div class="form-checkbox">
+      <ul class="form-checkbox">
+        <li class="save-login-status">
           <input type="checkbox" id="saveLoginStatus" name="saveLoginStatus" />
           <label for="saveLoginStatus">로그인 상태유지</label>
-        </div>
-        
-        <div class= form-checkbox>
-        <input type="checkbox" name="ipSecurity" id="ipSecurity" />
-        <label for="ipSecurity">
-            <a href="./ip_security.html">IP 보안</a>
-        </label>
-      </div>
-      </ul> 
-
-        
-
+        </li>
+        <li class="ip-security-option">
+          <a href="./ip_security.html">IP 보안</a>
+          <input type="checkbox" name="ipSecurity" id="ipSecurity" />
+          <label for="ipSecurity" class="ip-security-label" id="off">OFF</label>
+          <label for="ipSecurity" class="ip-security-label" id="on">ON</label>
+        </li>
+      </ul>
     </section>
   </body>
 </html>
