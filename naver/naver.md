@@ -42,7 +42,7 @@
 
 ## 1. HTML 마크업 구조 설계
 
-<img src="https://github.com/ayleecoder/homework/blob/main/IMG_4369.jpg?raw=true" width="400px" height="500px"> 
+<img src="https://github.com/ayleecoder/homework/blob/main/naver/IMG_4369.jpg" width="400px" height="500px"> 
 지난 로그인 실습 예제에서 설계했던 구조를 거의 그대로 사용했다.
 
 - h1으로 로고 마크업
