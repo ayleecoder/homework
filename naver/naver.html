@@ -14,20 +14,20 @@
     <section class="login">
       <form action="/" class="login-form">
         <fieldset>
-          <legend class="sr-only">회원 로그인 폼</legend>
+          <legend class="sr-only">로그인 입력 폼</legend>
           <!--  아이디 입력  -->
           <div class="login-input-group">
             <div role="group" class="form-input">
               <label for="userId">아이디(이메일)</label>
-              <input type="email" name="userId" id="userId" required />
+              <input type="text" name="userId" id="userId" required />
             </div>
             <div role="group" class="form-input">
               <label for="userPwd">비밀번호</label>
-              <input type="password" name="userPwd" id="userPwd" required />
+              <input type="password" name="userPwd" id="userPwd" required/>
             </div>
           </div>
 
-          <button type="button" class="login-button">로그인</button>
+          <button type="submit" class="login-button">로그인</button>
         </fieldset>
       </form>
 
@@ -37,9 +37,12 @@
           <label for="saveLoginStatus">로그인 상태유지</label>
         </div>
         
-        <div class= form-checkbox></div>
+        <div class= form-checkbox>
         <input type="checkbox" name="ipSecurity" id="ipSecurity" />
-        <label for="ipSecurity">IP 보안</label>
+        <label for="ipSecurity">
+            <a href="./ip_security.html">IP 보안</a>
+        </label>
+      </div>
       </ul> 
 
         
