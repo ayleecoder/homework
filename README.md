@@ -2,4 +2,4 @@
 
 태킷 프론트엔드 스쿨 10기 과제 저장소
 
-[HTML/CSS 과제 (2)](naver/naver.md)
+[HTML/CSS 과제 (2)- 네이버 로그인](naver/naver.md)
