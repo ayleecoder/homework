@@ -1,137 +1,37 @@
+:root {
+  --base-font-size: 16px;
+  --base-color: #181818;
+  --focus-color: #24388d;
+  --input-border-color: #dadada;
+  --input-bg-color: #fff;
+  --input-focus-outline-color: #03cf5d;
+  --input-focus-bg-color: #e9f0fd;
+  --button-color: #fff;
+  --button-bg-color: #03cf5d;
+}
+
+/* 기본 설정 */
 body {
-  color: #181818;
   margin: 0 auto;
-  min-width: 320px;
-  /* 320px 이상 768px 미만 */
-  @media (min-width: 320px) and (max-width: 768px) {
-  }
+}
 
-  :focus-visible {
-    outline: 2px solid #24388d;
-  }
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
 
-  body *,
-  body *::before,
-  body *::after {
-    box-sizing: border-box;
-  }
+fieldset,
+button,
+input,
+ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 
-  fieldset,
-  button,
-  ul {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* logo 컴포넌트 */
-  .logo {
-    margin-top: 5rem;
-    text-align: center;
-  }
-
-  /* input 컴포넌트 */
-  .form-input {
-    background-color: #fff;
-    border: 1px solid #dadada;
-    width: 100%;
-    margin-bottom: 0.5rem;
-
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 10px;
-
-    label {
-      /* white-space: nowrap; */
-    }
-
-    input {
-      flex-grow: 1;
-      border: 0;
-      font-size: 0.875rem;
-      padding: 1px 1px 1px 0px;
-      height: 24px;
-
-      block-size: 2.5rem;
-      width: 100%;
-    }
-
-    input:focus {
-      outline: none;
-      background-color: transparent;
-    }
-
-    &:focus-within {
-      outline: 1px solid #03cf5d;
-      background-color: #e9f0fd;
-    }
-  }
-
-  /* button 컴포넌트 */
-
-  .login-button {
-    background-color: #03cf5d;
-    border-radius: 1px;
-    color: #fff;
-    margin-top: 20px;
-    width: 100%;
-    font-size: 1rem;
-    height: 2.8125rem;
-
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* login */
-  .login-form {
-    padding: 10px 20px;
-    position: relative;
-  }
-
-  /* login form */
-
-  .form-checkbox {
-    position: relative;
-    width: inherit;
-    padding: 0 20px;
-    list-style: none;
-
-    display: flex;
-    flex-grow: 1;
-    flex-flow: row nowrap;
-    justify-content: right;
-
-    .save-login-status input {
-      position: absolute;
-      appearance: none;
-      width: 0.85rem;
-      height: 0.85rem;
-    }
-
-    .save-login-status label {
-      background: url(./icons/unchecked.svg) no-repeat 0 0 / contain;
-      padding-left: 25px;
-    }
-
-    input:checked + label[for='saveLoginStatus'] {
-      background-image: url(./icons/checked.svg);
-    }
-
-    input:focus {
-      outline: none;
-    }
-
-    input:focus-visible {
-      outline: 2px solid #24388d;
-    }
-  }
-
-  .ip-security-option {
-    display: none;
-  }
+*:focus {
+  outline: 0.125rem solid var(--focus-color);
 }
 
 .sr-only {
@@ -144,37 +44,150 @@ body {
   border: 0;
 }
 
-/* 반응형 */
-/* 768px 이상 디바이스 */
+/* logo 컴포넌트 */
+.logo {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/* input 컴포넌트 */
+.form-input {
+  background-color: var(--input-bg-color);
+  width: 100%;
+  border: 1px solid var(--input-border-color);
+  border-radius: 0.1875rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  input {
+    flex-grow: 1;
+    background: transparent;
+    border: 0;
+    font-size: 0.875rem;
+    padding: 0 0.625rem;
+    block-size: 2.8125rem;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input:focus-within {
+    outline: 1px solid var(--input-focus-outline-color);
+    background-color: var(--input-focus-bg-color);
+  }
+}
+
+/* 로그인폼 레이아웃 */
+.login-form {
+  padding: 0 1.25rem;
+  position: relative;
+}
+
+.login-input-group {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+/* button 컴포넌트 */
+.login-button {
+  background-color: var(--button-bg-color);
+  color: var(--button-color);
+  width: 100%;
+  font-size: 1rem;
+  height: 2.8125rem;
+  order: -1;
+}
+
+/*checkbox 컴포넌트  */
+input[type='checkbox'] {
+  position: absolute;
+  appearance: none;
+}
+
+/* (1) 로그인 상태 유지 */
+.save-login-status input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.save-login-status label {
+  background: url(./icons/unchecked.svg) no-repeat 0 0 / contain;
+  padding-left: 1.5625rem;
+}
+
+input:checked + label[for='saveLoginStatus'] {
+  background-image: url(./icons/checked.svg);
+}
+
+/* (2) ip 보안 */
+.ip-security-option {
+  input {
+    width: auto;
+    height: auto;
+  }
+}
+
+.ip-security-label {
+  opacity: 0;
+}
+
+.ip-security-option input::before {
+  content: 'OFF';
+  color: darkgray;
+}
+
+.ip-security-option input:checked {
+  &::before {
+    content: 'ON';
+    color: #03cf5d;
+  }
+}
+
+/* 로그인 아래 옵션 레이아웃 */
+.form-checkbox {
+  width: 100%;
+  padding: 1.25rem;
+  list-style: none;
+
+  display: flex;
+  flex-grow: 1;
+  flex-flow: row wrap;
+  row-gap: 0.625rem;
+  justify-content: flex-end;
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-color);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  body {
+    min-width: 320px;
+  }
+
+  .save-login-status {
+    justify-content: flex-end;
+  }
+  .ip-security-option {
+    display: none;
+  }
+}
+
+/* 데스크탑 */
 @media (min-width: 768px) {
   body {
-    max-width: 500px;
+    max-width: 540px;
+  }
 
-    .form-checkbox {
-      justify-content: space-between;
-    }
-
-    .ip-security-option {
-      display: block;
-
-      input {
-        position: absolute;
-        appearance: none;
-        width: 1.5rem;
-        height: 0.85rem;
-      }
-
-      #on {
-        display: none;
-      }
-
-      #ipSecurity:checked ~ #off {
-        display: none;
-      }
-      #ipSecurity:checked ~ #on {
-        display: inline;
-        color: #03cf5d;
-      }
-    }
+  .form-checkbox {
+    justify-content: space-between;
   }
 }
