@@ -15,8 +15,7 @@
       >
         <picture>
           <source srcset="logo.svg" type="image/svg+xml" />
-          <source srcset="logo.png" type="image/png" />
-          <img src="logo.svg" alt="네이버" />
+          <img src="logo.png" alt="네이버" />
         </picture>
       </a>
     </h1>
@@ -46,23 +45,38 @@
               placeholder="비밀번호"
             />
           </div>
+
+          <ul class="form-checkbox">
+            <li class="save-login-status">
+              <input
+                type="checkbox"
+                id="saveLoginStatus"
+                name="saveLoginStatus"
+              />
+              <label for="saveLoginStatus">로그인 상태유지</label>
+            </li>
+
+            <li class="ip-security-option">
+              <a
+                href="./ip_security.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >IP 보안</a
+              >
+              <div class="ip-security-switch">
+                <input type="checkbox" name="ipSecurity" id="ipSecurity" />
+                <label
+                  for="ipSecurity"
+                  class="ip-security-label"
+                  aria-label="IP 보안"
+                  ><span aria-hidden="true">OFF</span></label
+                >
+              </div>
+            </li>
+          </ul>
+          <button type="submit" class="login-button">로그인</button>
         </fieldset>
       </form>
-
-      <ul class="form-checkbox">
-        <li class="save-login-status">
-          <input type="checkbox" id="saveLoginStatus" name="saveLoginStatus" />
-          <label for="saveLoginStatus">로그인 상태유지</label>
-        </li>
-
-        <button type="submit" class="login-button">로그인</button>
-
-        <li class="ip-security-option">
-          <a href="./ip_security.html" rel="noopener noreferrer">IP 보안</a>
-          <input type="checkbox" name="ipSecurity" id="ipSecurity" />
-          <label for="ipSecurity" class="ip-security-label">OFF</label>
-        </li>
-      </ul>
     </section>
   </body>
 </html>

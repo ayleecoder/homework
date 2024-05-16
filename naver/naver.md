@@ -38,7 +38,9 @@ ON/OFF를 위해 가상 요소 사용, checked 될때 같은 ::before요소를 �
 - IP보안에 방문한 링크의 user agent style로 인해 글씨색과 underline이 생기는 것을
 
 ```
-a:visited{
+(수정)
+a{
+  color: inherit;
   text-decoration: none;
 }
 ```
