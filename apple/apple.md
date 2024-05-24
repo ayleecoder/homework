@@ -26,7 +26,7 @@
 ## 결과
 - small screen <br>
 <br>
-<img src="https://github.com/ayleecoder/homework/assets/126848934/5224aa21-1f99-48e3-ba4e-6f0ffdd05606"><br>
+<img src="https://github.com/ayleecoder/homework/assets/126848934/5224aa21-1f99-48e3-ba4e-6f0ffdd05606" width="300px" height="500px"><br>
 
 
 - large screen<br>
