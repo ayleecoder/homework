@@ -13,6 +13,7 @@
 /* 기본 설정 */
 body {
   margin: 0 auto;
+  font-family: 'SUIT Variable', sans-serif;
 }
 
 body *,
@@ -135,7 +136,7 @@ input:checked + label[for='saveLoginStatus'] {
 
 .ip-security-option input::before {
   content: 'OFF';
-
+  font-size: 1rem;
   color: darkgray;
 }
 
